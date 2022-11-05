@@ -22,7 +22,7 @@ p{
 }
 
 .contentBox{
-    text-align: left;
+    text-align: center;
     margin-top: 10%;
 }
 
@@ -36,7 +36,7 @@ p{
     border-radius: 80%;
     width: 5rem;
     height: 4rem;
-    margin: 3rem 2rem;
+    margin: 0;
     text-align: center;
     padding: 5px 2.5px;
 }
@@ -52,6 +52,10 @@ p{
      margin-left: 1.7rem;
      visibility: hidden;
 
-     margin: 1rem;
-     margin-top: 10px;
+
+     margin-top: 20px;
+}
+
+.btn{
+    margin: 0 auto;
 }
