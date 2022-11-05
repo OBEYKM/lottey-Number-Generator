@@ -1,0 +1,53 @@
+*{
+    background-color: #0E185F;
+    text-align: center;
+}
+
+body{
+    background-color: #0E185F;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #2FA4FF;
+}
+
+p{
+    color: #00FFDD;
+    margin: 5%;
+}
+
+
+.mainBox{
+    margin: 10% 20%;
+}
+
+.contentBox{
+    text-align: left;
+    margin-top: 10%;
+}
+
+.buttonBox{
+    margin: 10% 5%;
+    text-align: center;
+}
+
+.jackpot{
+    background-color: #E8FFC2;
+    border-radius: 80%;
+    width: 5rem;
+    height: 4rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.number{
+    background-color: #E8FFC2;
+    margin: 1rem auto;
+}
+
+#loading{
+ 
+     color: #2FA4FF;
+     margin-left: 1.7rem;
+     visibility: hidden;
+}
