@@ -7,7 +7,7 @@ body{
     background-color: #0E185F;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,label{
     color: #2FA4FF;
 }
 
@@ -16,6 +16,11 @@ p{
     margin: 5%;
 }
 
+
+.labelOption{
+   width: 8rem;
+   margin: 0.3rem auto;
+}
 
 .mainBox{
     margin: 10% 20%;
@@ -59,4 +64,11 @@ p{
 
 .btn{
     margin: 0 auto;
+}
+
+
+.base-lot{
+    margin: 1.2rem auto;
+    width: fit-content;
+    color: #2FA4FF;
 }
