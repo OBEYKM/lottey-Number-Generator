@@ -42,6 +42,8 @@ var baseLot = document.querySelector("#baseLot");
 var maxBaseLot = document.querySelector("#maxBaseLot");
 var messageBaseLot = document.querySelector("#messageBaseLot");
 
+var flowBtns = document.querySelectorAll(".flowBtn");
+
 
 var sum = [];
 
@@ -50,6 +52,31 @@ const maxMinNumber = 10;
 
 
 loadData();
+
+hideItems();
+
+
+function hideItems(){
+    
+    flowBtns.forEach(btn => {
+        
+        btn.style.visibility = "hidden";
+
+    });
+
+}
+
+
+function showItems(){
+
+    flowBtns.forEach(btn => {
+        
+        btn.style.visibility = "visible";
+
+    });
+
+
+}
 
 
 
@@ -108,11 +135,13 @@ function generateType(){
             console.log("generating balanced weight numbers..................");
             poolData();
             generateBalanceWeightNumbers();
+            hideItems();
         break;
 
         case HOT_NUMBER:
             poolData();
             generateHotnumbers();
+            showItems();
         break;
 
         default:
