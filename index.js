@@ -250,26 +250,13 @@ function generateHotnumbers(){
 
     hotTrack=0;
     dataHot = nRange;
-    showHotNumbers(nRange);
+    displayNext4HotNumbers();
 
 
 
 
 }
 
-function showHotNumbers(array){
-
-
-        j1 = array[hotTrack][lotNumber];
-        j2 = array[++hotTrack][lotNumber];
-        j3 = array[++hotTrack][lotNumber];
-        j4 = array[++hotTrack][lotNumber];
-        hotTrack++;
-  
-
-    displayNumberGenerated();
-
-}
 
 function displayNext4HotNumbers(){
 
