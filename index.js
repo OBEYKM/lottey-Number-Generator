@@ -183,21 +183,25 @@ function generateBalanceWeightNumbers(){
         console.log("regenerating the numbers");
     }
 
-
-   
-
-   setTimeout(() => {
+    displayNumberGenerated();
 
     
-    displayNumberGenerated();
     
     load.innerHTML="Done , get your luck number and good luck!";
+   
+
+//    setTimeout(() => {
+
+    
+//     displayNumberGenerated();
+    
+//     load.innerHTML="Done , get your luck number and good luck!";
     
     // setTimeout(() => {
     //     load.innerHTML="didnt like the numbers , dont worry ! <br> just press Generate button again!";
     // }, 2100);
 
-   }, 1500);
+//    }, 1500);
     
    
 }
@@ -439,52 +443,55 @@ function restart(){
 
     
     j1=getNumber();
+    j2=getNumber();
+    j3=getNumber();
+    j4=getNumber();
 
-    while(j1>=15){
+    // while(j1>=15){
 
-        j1=getNumber();
+    //     j1=getNumber();
 
-    }
+    // }
 
 
   
-    var out=true;
+    // var out=true;
 
-    while(out){
-        j2=getNumber();
-        // alert("j2 number = "+j2);
-        if(j2>=15 && j2<=28){
-            out=false;
+    // while(out){
+    //     j2=getNumber();
+    //     // alert("j2 number = "+j2);
+    //     if(j2>=15 && j2<=28){
+    //         out=false;
           
-        }
+    //     }
 
 
-    }
+    // }
 
 
 
-    out=true;
+    // out=true;
 
-    while(out){
-        j3=getNumber();
-        // alert("j2 number = "+j2);
-        if(j3>=29 && j3<=42){
-            out=false;
+    // while(out){
+    //     j3=getNumber();
+    //     // alert("j2 number = "+j2);
+    //     if(j3>=29 && j3<=42){
+    //         out=false;
           
-        }
+    //     }
 
        
-    }
+    // }
 
 
-    out=true;
+    // out=true;
 
-    while(out){
-        j4=getNumber();
-        if(j4>=42 && j4<=56){
-            out=false;
-        }
-    }
+    // while(out){
+    //     j4=getNumber();
+    //     if(j4>=42 && j4<=56){
+    //         out=false;
+    //     }
+    // }
 
 }
 
