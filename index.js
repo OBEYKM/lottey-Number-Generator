@@ -245,27 +245,41 @@ function showHotNumbers(array){
 function displayNext4HotNumbers(){
 
 
-    if(hotTrack<=55){
+    console.log("hot track next before = " + hotTrack);
+
+    if(hotTrack<0){
+        hotTrack = 0;
+    }
+
+    if(hotTrack<55){
+        // console.log("CtB = "+hotTrack);
         j1 = dataHot[hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         // j1 = -1;
     }
 
-    if(hotTrack<=55){
+    if(hotTrack<55){
+        // console.log("CtB = "+hotTrack);
         j2 = dataHot[++hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         // j2 = -1;
     }
 
-    if(hotTrack<=55){
+    if(hotTrack<55){
+        // console.log("CtB = "+hotTrack);
         j3 = dataHot[++hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         // j3 = -1;
     }
       
 
-    if(hotTrack<=55){
+    if(hotTrack<55){
+        // console.log("CtB = "+hotTrack);
         j4 = dataHot[++hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         // j4 = -1;
     }      
@@ -282,33 +296,11 @@ function displayNext4HotNumbers(){
     }
 
    
-    console.log("hot track next = " + hotTrack);
+    console.log("hot track next after = " + hotTrack);
 }
 
 
-function inHotTrack(order){
 
-    switch(order){
-
-        case 1 :
-            if(hotTrack>55){
-                return false;
-            }else{
-                return true;
-            }
-        break;
-
-        case 2 :
-            if(hotTrack<0){
-                return false;
-            }else{
-                return true;
-            }
-        break;
-
-    }
-  
-}
 
 function displayPrev4HotNumbers(){
  
@@ -319,28 +311,41 @@ function displayPrev4HotNumbers(){
     //     hotTrack--;
 
     // displayNumberGenerated();
+    console.log("hot track prev before =" + hotTrack);
 
-    if(hotTrack>=0){
+    if(hotTrack>55){
+        hotTrack = 55;
+    }
+
+    if(hotTrack>0){
+        // console.log("CtB = "+hotTrack);
         j1 = dataHot[hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         j1 = 00;
     }
 
-    if(hotTrack>=0){
+    if(hotTrack>0){
+        // console.log("CtB = "+hotTrack);
         j2 = dataHot[--hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         j2 = 00;
     }
 
-    if(hotTrack>=0){
+    if(hotTrack>0){
+        // console.log("CtB = "+hotTrack);
         j3 = dataHot[--hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         j3 = 00;
     }
       
 
-    if(hotTrack>=0){
+    if(hotTrack>0){
+        // console.log("CtB = "+hotTrack);
         j4 = dataHot[--hotTrack][lotNumber];
+        // console.log("CtA = "+hotTrack);
     }else{
         j4 = 00;
     } 
@@ -358,7 +363,7 @@ function displayPrev4HotNumbers(){
         hotTrack--;
     }
 
-    console.log("hot track prev =" + hotTrack);
+    console.log("hot track prev after =" + hotTrack);
 
 }
 
