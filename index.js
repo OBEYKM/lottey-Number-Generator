@@ -26,6 +26,7 @@ var message = document.querySelector("#message");
 
 const BALANCED_WEIGHT = "balanced-weight";
 const HOT_NUMBER = "hot-numbers";
+const NEVER_USED = "Never-used";
 
 
 var algorithmOption = document.querySelectorAll(".algorithm");
@@ -44,6 +45,11 @@ var messageBaseLot = document.querySelector("#messageBaseLot");
 
 var flowBtns = document.querySelectorAll(".flowBtn");
 
+var lotRange = document.querySelector(".lotRange");
+var isLotRangeShown = true;
+
+var neverUsedfun = document.querySelector(".NeverUsedfun");
+
 
 var sum = [];
 
@@ -55,6 +61,9 @@ loadData();
 
 hideItems();
 
+
+
+/////////////////////////////////////////////////////////General function ///////////////////////////////////////////////////
 
 function hideItems(){
     
@@ -79,7 +88,74 @@ function showItems(){
 }
 
 
+function showLotRange(){
 
+    lotRange.innerHTML = "<label for=''>Lot Range  :  </label> <input class='base-lot'  type='number' id='baseLot' value='30' > <label  for='' id='messageBaseLot'></label> ";
+
+    isLotRangeShown = true;
+}
+
+
+function showNeverUsedfun(){
+
+    lotRange.innerHTML = "<label class='NeverUsedfun' for=''> <h5>lot Range not required</h5></label>"
+
+}
+
+function nullAllJackpotBox(){
+    btnJ1.innerHTML = 00;
+    btnJ2.innerHTML = 00;
+    btnJ3.innerHTML = 00;
+    btnJ4.innerHTML = 00;
+}
+
+
+function showClickedRadioFun(){
+
+
+
+  for(const type of algorithmOption){
+
+    // console.log(type.checked);
+
+             if(type.checked){
+                   console.log("showing funtion if availble of :  " + type.value);
+                   
+                   switch(type.value){
+
+                    case BALANCED_WEIGHT:
+                        console.log("loading  "+BALANCED_WEIGHT+" ....");
+                        showLotRange();
+                        hideItems();
+                        nullAllJackpotBox();
+                    break;
+            
+                    case HOT_NUMBER:
+                        console.log("loading  "+HOT_NUMBER+" ....");                      
+                        showLotRange();
+                        nullAllJackpotBox();
+                    break;
+            
+                    case NEVER_USED:
+                        console.log("loading  "+NEVER_USED+" ....");               
+                        showNeverUsedfun();
+                        hideItems();
+                        nullAllJackpotBox();
+                    break;
+            
+                    default:
+                        console.log("Error... , this should not happen!  , method showClickedRadioFun");
+                
+                   }
+
+              }
+    }
+
+
+}
+
+
+///////////////////////////////////////////////////////// end General function ///////////////////////////////////////////////////
 
 
 function generateType(){
@@ -144,6 +220,10 @@ function generateType(){
             showItems();
         break;
 
+        case NEVER_USED:
+            generateNewNumberGroupFromData();
+        break;
+
         default:
             message.innerHTML = " <u style='color:red' >  please choose an algorithm !  </u> ";
 
@@ -185,7 +265,7 @@ function generateBalanceWeightNumbers(){
 
     displayNumberGenerated();
 
-    
+
     
     load.innerHTML="Done , get your luck number and good luck!";
    
@@ -588,7 +668,7 @@ function loadData(){
         [41,17,47,34],[31,07,25,42],[46,37,48,22],[08,22,13,41],[30,25,32,44],[39,24,42,06],[39,25,36,17],[45,08,43,23],[14,10,45,22],
         [12,34,16,15],[17,21,36,43],[27,33,44,41],[26,46,07,34],[41,17,14,09],[05,13,21,25],[44,30,07,43],[03,16,42,45],[40,35,26,48],
         [02,04,03,40],[15,02,39,30],[10,36,47,18],[23,33,10,04],[45,35,19,33],[27,05,44,39],[19,41,06,44],[45,03,28,15],[03,45,36,47],
-        [12,13,41,15],[42,02,29,14],[08,43,17,28],[08,10,44,46],[17,20,34,40],[04,14,18,01],[46,14,02,37],[31,09,42,07],[19,47,41,21],
+/*30 */ [12,13,41,15],[42,02,29,14],[08,43,17,28],[08,10,44,46],[17,20,34,40],[04,14,18,01],[46,14,02,37],[31,09,42,07],[19,47,41,21],
         [41,35,45,05],[20,40,36,18],[43,15,39,25],[22,36,46,47],[13,45,04,26],[02,46,28,06],[20,05,34,19],[27,13,36,16],[44,06,38,43],
         [27,46,34,09],[12,22,33,41],[03,04,22,18],[15,31,45,10],[11,47,16,29],[45,19,35,04],[13,10,15,39],[19,01,43,38],[19,02,05,46],
         [34,12,16,04],[23,35,20,21],[08,22,25,39],[27,14,25,36],[31,44,09,48],[13,08,07,47],[32,17,16,37],[36,15,34,32],[38,14,09,29],
@@ -600,7 +680,12 @@ function loadData(){
         [21,46,01,39],[27,35,34,41],[33,13,17,46],[18,20,31,01],[05,42,38,30],[06,30,46,04],[21,18,24,05],[33,13,25,14],[29,41,20,30],
         [40,08,44,27],[06,12,26,08],[34,16,38,21],[20,43,41,11],[14,11,10,02],[32,28,26,33],[07,37,22,08],[10,18,09,31],[02,08,18,17],
         [28,27,25,06],[16,22,33,45],[39,27,33,30],[41,02,43,34],[21,04,41,20],[43,35,41,11],[48,26,40,21],[06,34,27,22],[16,10,12,45],
-        [11,09,25,34],[32,28,41,36],[43,14,03,01],[22,31,41,17],[05,41,12,35],[21,27,09,10],[42,02,29,07],[07,22,30,38],[46,37,23,07]
+        [11,09,25,34],[32,28,41,36],[43,14,03,01],[22,31,41,17],[05,41,12,35],[21,27,09,10],[42,02,29,07],[07,22,30,38],[46,37,23,07],
+        [32,12,10,28],[17,44,25,18],[31,36,06,10],[19,36,16,20],[42,25,47,27],[14,31,24,42],[33,32,27,14],[22,40,46,24],[29,35,38,47],
+        [42,10,07,26],[03,42,16,04],[05,29,47,45],[35,17,47,22],[06,20,34,01],[03,02,15,11],[24,19,48,27],[21,33,17,39],[34,36,10,09],
+        [04,02,16,12],[25,06,37,18],[46,24,03,32],[46,41,11,05],[06,36,08,42],[37,42,27,34],[07,35,34,21],[32,06,18,38],[05,12,30,34],
+        [06,41,27,08],[34,36,22,45],[21,30,17,11],[42,38,03,32],[38,09,07,08],[06,07,47,24],[09,19,44,10],[02,45,09,40],[37,46,13,30],
+        [11,38,29,32],[37,46,06,19],[26,19,03,42],[37,16,14,05],[21,47,18,42],[21,38,12,26],[26,45,44,02],[05,45,03,31],[36,40,05,02]
         
        ];
 
@@ -608,6 +693,7 @@ function loadData(){
 
 
        // TODO: algorithm based on probability on re-apearing on next draw based on user lottery and on every how many lot
+       // TODO: algorithm based on permutation not used yet
       
 
 
@@ -630,6 +716,11 @@ function loadData(){
     maxBaseLot.innerHTML = " <b style='color: #00FFDD; margin-left : 0.2rem;'> <u>  MAX : "+ data.length +"</u> </b> ";
     console.log("................finished loading all lottery numbers................");
 
+    console.log("=============================== Getting non-matching lot===================================");
+    // checkIfNumberLotExists();
+    // generateNewNumberGroupFromData();
+    console.log("===============================End  non-matching lot===================================");
+
     // addAllLotteryNumber();
 
     // findMinSumNumber();
@@ -641,6 +732,7 @@ function loadData(){
 
 
 function poolData(){
+    baseLot = document.querySelector("#baseLot");
     console.log("Obtaining "+baseLot.value+" lottery numbers for generating numbers based on choosen algorithm.......");
 
     datapool = new Array();
@@ -869,5 +961,180 @@ function findMaxSumNumber(){
 
     console.log("..........................................");
  
+
+}
+
+
+///////////////////////////////////////// algorithm based on permutation not used yet ///////////////////////////////////////
+
+
+
+function checkIfNumberLotExists(){
+
+    var found;
+    var temp;
+    var  alltrue;
+
+    // test data to check if algorithm works
+
+    // datat =  [
+    //     [52,54,56,45],[53,31,54,05],[01,12,02,10],[41,23,12,17],[26,43,32,41],[26,43,32,42],[41,23,12,18],[53,31,54,07],[05,09,41,31],
+    //     [52,54,56,46],[17,16,11,53],[12,01,10,02],[35,20,13,38],[55,32,43,03],[26,43,32,11],[12,47,15,29],[33,18,09,27],[09,05,31,41]
+
+    // ]
+
+    for (let current = 0; current < data.length-1; current++) {
+        
+        
+        for (let next = current+1; next < data.length; next++) {
+          
+
+            // console.log("Checking   :   "+data[current]+"   and   " + data[next]);
+
+            found = new Array();
+
+            for (let lot = 0; lot < 4; lot++) {
+                
+                temp = false;
+
+                data[current].forEach(lottery => {
+
+                     
+                   if (lottery == data[next][lot]) {
+
+
+                      temp = true;
+                    
+
+                   }
+
+                });
+
+                found.push(temp);
+
+
+            }
+
+            alltrue = 0;
+
+            found.forEach(e => {
+
+                if (e) {
+                    alltrue++;
+                }
+                
+            });
+
+            if(alltrue==4){
+                console.log("found a the same lot number  : "+data[current]+"   and   " + data[next] + " position  "+(current+1)+" and "+ (next+1));
+            }
+
+
+        }
+        
+    }
+
+}
+
+
+function generateNewNumberGroupFromData(){
+
+
+    var temp;
+    var found;
+
+    var randomArray = getRandomArrayNumber();
+
+    console.log("Number got to check :"+randomArray);
+
+    var alltrue = 0;
+
+
+    var current=0;
+
+    var tempCurrent;
+
+ 
+        while ( current < data.length) {
+        
+    
+
+            temp = false ; 
+            alltrue = 0;
+            found = new Array();
+            
+    
+            data[current].forEach(lottery => {
+                
+    
+                randomArray.forEach(lotteryTrial => {
+
+                    if(lottery==lotteryTrial){
+                        temp = true;
+                    }
+                    
+                });
+                
+                found.push(temp);
+                temp = false ; 
+
+            });
+
+
+            
+
+            found.forEach(e => {
+                
+                if (e) {
+                
+                    alltrue++;
+
+                }
+
+            });
+
+            tempCurrent = current;
+            current++;
+
+            if (alltrue == 4) {
+
+                console.log(" found a match of given generated number :  "+data[tempCurrent]+" and " +randomArray+" , getting new one....");
+                   randomArray = getRandomArrayNumber();             
+                // console.log("Value of current = "+(tempCurrent));
+                current = 0;
+                // tempCurrent = current;
+                // console.log("Value of current after change = "+(tempCurrent));
+                
+            }
+
+           
+            
+         }
+
+
+
+         j1 = randomArray[0];
+         j2 = randomArray[1];
+         j3 = randomArray[2];
+         j4 = randomArray[3];
+
+         displayNumberGenerated();
+
+
+         console.log("================================Done , found unique lottery number============================");
+         console.log("Here is the number : "+randomArray);
+         console.log("================================END found unique lottery number============================");
+
+}
+
+
+function getRandomArrayNumber(){
+
+    return [
+        getNumber(),
+        getNumber(),
+        getNumber(),
+        getNumber()
+    ]
 
 }

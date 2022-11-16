@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico">
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -18,8 +19,9 @@
 
 
         <p id="message">Please choose type of algarithm to generate your lucky number</p>
-
-        <div >
+        <label for="" id="maxBaseLot"></label> 
+       <div class="funView" style="position:relative;">
+        <div  class="lotRange" >
 
           <!-- <div class=" lg-4 md-6 sm-6"> <label for="">Lot Range  :  </label> </div>
           <div class=" lg-4 md-6 sm-6"> <input type="number" id="baseLot" value="30" class="base-lot"> </div>
@@ -28,11 +30,15 @@
 
 
           <label for="">Lot Range  :  </label> 
-          <input  type="number" id="baseLot" value="30" class="base-lot">
-          <label  for="" id="maxBaseLot"></label>   <br>
-          <label for="" id="messageBaseLot"></label> 
+          <input class="base-lot"  type="number" id="baseLot" value="30" >
+           <br>
+          <label  for="" id="messageBaseLot"></label> 
 
-        </div>
+          </div>
+       </div>
+    
+         
+      
 
        <!-- radio group  -->
        <fieldset>
@@ -40,13 +46,18 @@
         <div class="optionBox">
 
             <div>
-                <input name="algorithmOption" value="balanced-weight"  type="radio" class="algorithm"  />
+                <input name="algorithmOption" onclick="showClickedRadioFun()" value="balanced-weight"  type="radio" class="algorithm"  />
                 <label class="labelOption" id="balanced-weight" for="">Balanced Weight</label>
               </div>
       
               <div>
-                <input name="algorithmOption" value="hot-numbers"  type="radio" class="algorithm"  />
+                <input name="algorithmOption" onclick="showClickedRadioFun()" value="hot-numbers"  type="radio" class="algorithm"  />
                 <label class="labelOption" id="Hot-numbers" for="">Hot -> Cold</label>
+              </div>
+
+              <div>
+                <input name="algorithmOption" onclick="showClickedRadioFun()" value="Never-used"  type="radio" class="algorithm"  />
+                <label class="labelOption" id="Never-used" for="">Never Used</label>
               </div>
 
         </div>
