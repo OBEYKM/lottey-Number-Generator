@@ -685,7 +685,13 @@ function loadData(){
         [42,10,07,26],[03,42,16,04],[05,29,47,45],[35,17,47,22],[06,20,34,01],[03,02,15,11],[24,19,48,27],[21,33,17,39],[34,36,10,09],
         [04,02,16,12],[25,06,37,18],[46,24,03,32],[46,41,11,05],[06,36,08,42],[37,42,27,34],[07,35,34,21],[32,06,18,38],[05,12,30,34],
         [06,41,27,08],[34,36,22,45],[21,30,17,11],[42,38,03,32],[38,09,07,08],[06,07,47,24],[09,19,44,10],[02,45,09,40],[37,46,13,30],
-        [11,38,29,32],[37,46,06,19],[26,19,03,42],[37,16,14,05],[21,47,18,42],[21,38,12,26],[26,45,44,02],[05,45,03,31],[36,40,05,02]
+        [11,38,29,32],[37,46,06,19],[26,19,03,42],[37,16,14,05],[21,47,18,42],[21,38,12,26],[26,45,44,02],[05,45,03,31],[36,40,05,02],
+        [21,16,27,35],[03,17,22,10],[48,18,31,05],[43,48,23,45],[44,31,39,10],[08,44,47,10],[03,22,35,20],[47,27,19,28],[35,22,44,43],
+        [22,25,01,10],[38,13,33,27],[41,04,36,08],[47,23,41,11],[10,04,21,25],[24,21,38,29],[12,09,43,40],[07,18,37,36],[40,04,37,22],
+        [07,01,22,17],[09,38,44,05],[30,13,39,10],[23,11,02,07],[28,36,06,08],[04,20,24,28],[24,47,44,13],[07,34,25,04],[08,45,30,23],
+        [42,18,24,07],[22,48,03,20],[24,37,41,05],[27,47,12,48],[02,43,39,41],[44,16,23,37],[41,22,21,25],[15,48,37,25],[39,04,38,13],
+        [48,29,21,32],[08,19,21,02],[45,07,27,26],[16,15,35,29],[45,23,37,17],[38,43,24,48],[38,20,30,40],[27,31,15,20],[35,09,11,36]
+        
         
        ];
 
@@ -693,7 +699,6 @@ function loadData(){
 
 
        // TODO: algorithm based on probability on re-apearing on next draw based on user lottery and on every how many lot
-       // TODO: algorithm based on permutation not used yet
       
 
 
@@ -1026,7 +1031,7 @@ function checkIfNumberLotExists(){
             });
 
             if(alltrue==4){
-                console.log("found a the same lot number  : "+data[current]+"   and   " + data[next] + " position  "+(current+1)+" and "+ (next+1));
+                console.log("found (44)  the same lot number  : "+data[current]+"   and   " + data[next] + " position  "+(current+1)+" and "+ (next+1));
             }
 
 
@@ -1098,8 +1103,9 @@ function generateNewNumberGroupFromData(){
 
             if (alltrue == 4) {
 
-                console.log(" found a match of given generated number :  "+data[tempCurrent]+" and " +randomArray+" , getting new one....");
-                   randomArray = getRandomArrayNumber();             
+                console.log(" found (4) match of given generated number :  "+data[tempCurrent]+" and " +randomArray+" , getting new one....");
+                   randomArray = getRandomArrayNumber();
+                   console.log("new number got to check : "+randomArray);              
                 // console.log("Value of current = "+(tempCurrent));
                 current = 0;
                 // tempCurrent = current;
@@ -1107,6 +1113,15 @@ function generateNewNumberGroupFromData(){
                 
             }
 
+            if(alltrue==3){
+                console.log(" found (3) match of given generated number :  "+data[tempCurrent]+" and " +randomArray+" , getting new one....");
+                randomArray = getRandomArrayNumber();     
+                console.log("new number got to check : "+randomArray); 
+             // console.log("Value of current = "+(tempCurrent));
+             current = 0;
+             // tempCurrent = current;
+             // console.log("Value of current after change = "+(tempCurrent));
+            }
            
             
          }
