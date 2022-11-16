@@ -41,10 +41,10 @@ p{
     border-radius: 80%;
     width: 5rem;
     height: 4rem;
-    margin: 0;
+    margin: 1.2rem auto;
     text-align: center;
-    margin-left: 5rem;
-    margin-top: 1.2rem;
+    /* margin-left: 5rem;
+    margin-top: 1.2rem; */
 }
 
 .number{
